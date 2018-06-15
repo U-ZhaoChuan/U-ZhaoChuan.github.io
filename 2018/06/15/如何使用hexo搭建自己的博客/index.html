@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="赵传的前端博客">
 <meta property="og:description" content="一、准备环境[NodeJs安装下载]（ https://nodejs.org/ ）[安装和配置Git for Windows]  ( https://git-for-windows.github.io/ )一路Next安装就好 安装Hexo1、快捷键windows+R打开cmd;输入命令1$ npm install hexo-cli -g 如果不行就先执行：1$ npm --registry h">
 <meta property="og:locale" content="简体中文">
-<meta property="og:updated_time" content="2018-06-15T14:22:34.258Z">
+<meta property="og:updated_time" content="2018-06-15T14:36:49.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用hexo搭建自己的博客">
 <meta name="twitter:description" content="一、准备环境[NodeJs安装下载]（ https://nodejs.org/ ）[安装和配置Git for Windows]  ( https://git-for-windows.github.io/ )一路Next安装就好 安装Hexo1、快捷键windows+R打开cmd;输入命令1$ npm install hexo-cli -g 如果不行就先执行：1$ npm --registry h">
@@ -187,7 +187,14 @@
 <p>再执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
 <p>然后执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">补充：了解几个hexo常用的命令</span><br><span class="line">(a) hexo g <span class="comment">#完整命令hexo generate 用于生成静态文件</span></span><br><span class="line">(b) hexo s <span class="comment">#完整命令hexo server 用于启动服务器，在本地预览</span></span><br><span class="line">(c) hexo d <span class="comment">#完整命令 hexo deploy 用于将本地文件发布到github上</span></span><br><span class="line">(d) hexo n <span class="comment">#完整命令 hexo new 用于新建一篇文章</span></span><br><span class="line">(f) hexo init 用于初始化博客文件根目录</span><br></pre></td></tr></table></figure>
-<h2 id="二、注册github-https-github-com"><a href="#二、注册github-https-github-com" class="headerlink" title="二、注册github  ( https://github.com/ )"></a>二、注册github  ( <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> )</h2><h2 id="三、ssh链接"><a href="#三、ssh链接" class="headerlink" title="三、ssh链接"></a>三、ssh链接</h2>
+<h2 id="二、注册github-https-github-com"><a href="#二、注册github-https-github-com" class="headerlink" title="二、注册github  ( https://github.com/ )"></a>二、注册github  ( <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> )</h2><h2 id="三、ssh链接"><a href="#三、ssh链接" class="headerlink" title="三、ssh链接"></a>三、ssh链接</h2><p>1、打开git根目录，双击git-bash.exe;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>~/.ssh</span><br></pre></td></tr></table></figure></p>
+<p>2、执行如下命令，生成一个新的ssh key;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure></p>
+<p>执行命令后会要求确认路径和输入密码，为减少麻烦可一律回车无需设置。</p>
+<p>3、链接github<br>新的ssh key生成成功后会在C盘用户目录下生成一个.ssh文件夹，进入该文件，记事本方式打开id_rsa.pub，复制里面的key。打开你的github主页，进入Settings,选择SSH and GPG Keys,创建新的SSH Key,将复制的key值粘贴到key内。title随便填，保存。</p>
+<p>4、验证是否链接到github<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com    <span class="comment"># 注意邮箱地址不用改</span></span><br></pre></td></tr></table></figure></p>
+<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You<span class="string">'ve successfully authenticated,but GitHub does not provide shell access</span></span><br></pre></td></tr></table></figure></p>
+<p>这就表示已经成功连接到Github了。此时你还需要配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"liuxianan"</span>// 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.email  <span class="string">"xxx@qq.com"</span>// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure></p>
+
       
 
       
