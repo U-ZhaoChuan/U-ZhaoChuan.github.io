@@ -201,6 +201,11 @@
 <p>4、在博客文件夹根目录安装插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>5、依次执行如下命令上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure></p>
 <p>需要注意的是，每次上传更新时最好都依次执行一遍以上三个命令。<br>现在在浏览器中输入 <a href="http://yourgithubname.github.io" target="_blank" rel="noopener">http://yourgithubname.github.io</a> 就可以看到你的个人博客了。</p>
+<p>6、保留CNAME、README.md等文件<br>提交之后网页上一看，发现以前其它代码都没了，此时不要慌，一些非md文件可以把他们放到source文件夹下，这里的所有文件都会原样复制（除了md文件）到public目录的，由于hexo默认会把所有md文件都转换成html，包括README.md，所有需要每次生成之后、上传之前，手动将README.md复制到public目录，并删除README.html。</p>
+<h2 id="五、修改博客主题"><a href="#五、修改博客主题" class="headerlink" title="五、修改博客主题"></a>五、修改博客主题</h2><p>更多官方主题点这里：（ <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> ）</p>
+<p>以hexo-theme-yilia主题为例，在你博客项目文件夹下，打开Git Bash Here，执行以下命令下载主题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure></p>
+<p>修改博客项目文件夹下的_config.yml中的theme: landscape改为theme: yilia，然后重新执行hexo g来重新生成。</p>
+<p>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
 
       
 
